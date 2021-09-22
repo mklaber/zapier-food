@@ -1,0 +1,41 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "expect": true,
+    "describe": true,
+    "test": true,
+    "jest": true,
+    "beforeEach": true,
+    "it": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "camelcase": ["error", { "properties": "never" }],
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ],
+    "prefer-const": "error",
+    "prettier/prettier": "error"
+  },
+  "overrides": [
+    {
+      "files": ["test/*.test.js"],
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
+}
