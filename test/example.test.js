@@ -1,5 +1,5 @@
 describe('addition ', () => {
   it('should work', () => {
-    expect(1 + 1).toEqual(2);
+    expect(1 + 1).toEqual(3);
   });
 });
