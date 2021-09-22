@@ -5,7 +5,7 @@ exec('zapier validate --format=json', (err, stdout, stderr) => {
     console.error(`An error happened and we don't know what to do about it.`);
     console.error(err);
     console.error(stderr);
-    return;
+    process.exit(err.code);
   }
 
   const ignorableCodes = (ZAPIER_VALIDATION_CODES_TO_IGNORE || '').split(',');
