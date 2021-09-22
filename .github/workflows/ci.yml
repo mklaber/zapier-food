@@ -1,0 +1,22 @@
+name: Zapier CI
+
+on: [push, pull_request]
+
+jobs:
+  check:
+
+    runs-on: ubuntu-latest
+    env:
+      ZAPIER_VALIDATION_CODES_TO_IGNORE: D024
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.17.6
+        cache: 'npm'
+    - run: npm ci
+    - run: npm test
+    - run: npm run lint
+    - run: npm run validate
